@@ -6,6 +6,7 @@ import (
 	"os"
 
 	_ "github.com/joho/godotenv/autoload"
+	"github.com/HexSeal/mememachine_slackbot/bot"
 )
 
 func main() {
@@ -17,6 +18,6 @@ func main() {
 // slackIt is a function that initializes the Slackbot.
 func slackIt() {
 	botToken := os.Getenv("BOT_OAUTH_ACCESS_TOKEN")
-	slackClient := CreateSlackClient(botToken)
-	RespondToEvents(slackClient)
+	slackClient := bot.CreateSlackClient(botToken)
+	bot.RespondToEvents(slackClient)
 }
