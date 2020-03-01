@@ -54,8 +54,14 @@ func RespondToEvents(slackClient *slack.RTM) {
 				PikachuWhatFace(slackClient, ev.Channel)
 			}
 
+		case *slack.PresenceChangeEvent:
+			fmt.Printf("Presence Change: %v\n", ev)
+
 		case *slack.LatencyReport:
 			fmt.Printf("Current latency: %v\n", ev.Value)
+
+		case *slack.DesktopNotificationEvent:
+			fmt.Printf("Desktop Notification: %v\n", ev)
 
 		case *slack.RTMError:
 			fmt.Printf("Error: %s\n", ev.Error())
