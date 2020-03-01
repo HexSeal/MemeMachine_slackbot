@@ -6,7 +6,7 @@ import (
 	"os"
 
 	_ "github.com/joho/godotenv/autoload"
-	"github.com/HexSeal/mememachine_slackbot/bot"
+	"github.com/HexSeal/MemeMachine_slackbot/bot"
 )
 
 func main() {

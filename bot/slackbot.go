@@ -28,7 +28,7 @@ func RespondToEvents(slackClient *slack.RTM) {
 	for msg := range slackClient.IncomingEvents {
 		// Log all events
 		fmt.Println("Event Received: ", msg.Type)
-
+		
 		// Switch on the incoming event type
 		switch ev := msg.Data.(type) {
 		case *slack.MessageEvent:
